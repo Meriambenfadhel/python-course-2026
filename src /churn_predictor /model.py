@@ -18,7 +18,7 @@ def train_model(df: pd.DataFrame) -> None:
         X, y, test_size=0.2, random_state=42
     )
 
-    model = LogisticRegression(max_iter=1000)
+    model = LogisticRegression(max_iter=5000)
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
