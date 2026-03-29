@@ -8,9 +8,13 @@ A Python CLI tool for customer churn analysis and prediction.
 - Load and clean customer churn dataset
 - Train a logistic regression model
 - Evaluate model performance with classification metrics
+- shows basic dataset information
+- displays churn distribution
 
 #  Installation
 
 ```bash
+uv venv
+.venv\Scripts\activate
 uv pip install -e .
 uv run -m churn_predictor
