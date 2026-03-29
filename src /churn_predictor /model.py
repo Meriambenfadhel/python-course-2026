@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 
 
@@ -25,9 +25,8 @@ def train_model(df: pd.DataFrame) -> None:
 
     print("\nModel Evaluation:")
     print("=" * 30)
-   print(f"Accuracy: {accuracy_score(y_test, y_pred):.3f}")
+    print(f"Accuracy: {accuracy_score(y_test, y_pred):.3f}")
     print("\nConfusion Matrix:")
     print(confusion_matrix(y_test, y_pred))
     print("\nClassification Report:")
     print(classification_report(y_test, y_pred))
-    
