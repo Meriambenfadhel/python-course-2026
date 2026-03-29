@@ -11,5 +11,11 @@ def main() -> None:
     print(f"Rows: {df.shape[0]}")
     print(f"Columns: {df.shape[1]}")
 
+     churn_counts = df["Churn"].value_counts()
+    print("\nChurn distribution:")
+    for label, count in churn_counts.items():
+        print(f"- {label}: {count}")
+
+
     print("\nTraining model...")
     train_model(df)
