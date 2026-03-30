@@ -17,3 +17,5 @@ def main() -> None:
 
     print("\nTraining model...")
     train_model(df)
+
+    print(f"\nRemaining missing values after cleaning: {df.isnull().sum().sum()}")
