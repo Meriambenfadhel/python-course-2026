@@ -31,10 +31,11 @@ def main() -> None:
     print("\nChurn distribution:")
     for label, count in churn_counts.items():
         print(f"- {label}: {count}")
+        
          save_churn_distribution_plot(df)
     print("\nSaved plot to outputs/churn_distribution.png")
 
     print("\nTraining model...")
     train_model(df)
-
+    
     print(f"\nRemaining missing values after cleaning: {df.isnull().sum().sum()}")
