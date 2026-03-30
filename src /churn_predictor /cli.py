@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from churn_predictor.data import load_data
 from churn_predictor.model import train_model
 
-def save_churn_distribution_plot(df) -> None:
+
+def save_churn_distribution_plot(df):
     output_dir = Path("outputs")
     output_dir.mkdir(exist_ok=True)
 
@@ -18,8 +19,9 @@ def save_churn_distribution_plot(df) -> None:
     plt.tight_layout()
     plt.savefig(output_dir / "churn_distribution.png")
     plt.close()
-    
-def main() -> None:
+
+
+def main():
     df = load_data()
 
     print("Churn Predictor")
@@ -31,11 +33,9 @@ def main() -> None:
     print("\nChurn distribution:")
     for label, count in churn_counts.items():
         print(f"- {label}: {count}")
-        
-         save_churn_distribution_plot(df)
+
+    save_churn_distribution_plot(df)
     print("\nSaved plot to outputs/churn_distribution.png")
 
     print("\nTraining model...")
     train_model(df)
-    
-    print(f"\nRemaining missing values after cleaning: {df.isnull().sum().sum()}")
