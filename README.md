@@ -18,3 +18,14 @@ uv venv
 .venv\Scripts\activate
 uv pip install -e .
 uv run -m churn_predictor
+
+## Output
+
+The program prints:
+- number of rows and columns
+- churn distribution
+- model accuracy
+- confusion matrix
+- classification report
+
+It also saves a plot of the churn distribution to `outputs/churn_distribution.png`.
